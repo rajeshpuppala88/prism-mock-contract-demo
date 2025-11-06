@@ -1,0 +1,18 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ
+*.iml
+.idea/
+
+# Node
+mock/node_modules/
+mock/.prism-pids.json
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
