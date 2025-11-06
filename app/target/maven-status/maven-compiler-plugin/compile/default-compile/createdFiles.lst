@@ -1,0 +1,4 @@
+com\example\demo\DemoApplication.class
+com\example\demo\client\AccountsClient$Account.class
+com\example\demo\client\AccountsClient.class
+com\example\demo\web\AccountsController.class

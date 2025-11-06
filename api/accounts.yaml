@@ -1,0 +1,52 @@
+openapi: 3.0.3
+info:
+  title: Accounts API
+  version: 1.0.0
+
+paths:
+  /accounts:
+    get:
+      summary: List all accounts
+      operationId: listAccounts
+      responses:
+        '200':
+          description: A list of accounts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+              examples:
+                sample:
+                  value:
+                    - id: 1001
+                      name: "Chequing Account"
+                      tag: "PRIMARY"
+                    - id: 1002
+                      name: "Savings Account"
+                      tag: "HIGH_INTEREST"
+                    - id: 1003
+                      name: "Business Account"
+                      tag: "CORPORATE"
+                    - id: 1004
+                      name: "USD Account"
+                      tag: "FOREIGN_CURRENCY"
+                    - id: 1005
+                      name: "Investment Account"
+                      tag: "TFSA"
+
+components:
+  schemas:
+    Account:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        tag:
+          type: string

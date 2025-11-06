@@ -1,0 +1,23 @@
+name: Contract CI
+on: [push, pull_request]
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Install mock deps
+        working-directory: mock
+        run: npm ci
+      - name: Lint OpenAPI (optional)
+        working-directory: mock
+        run: npm run lint
+      - name: Start Prism and run tests
+        run: |
+          cd mock && npm run start &
+          PRISM_PID=$!
+          cd ../app
+          ./mvnw -q -DskipTests dependency:resolve || true
+          mvn -q -e -B verify
+          kill $PRISM_PID || true

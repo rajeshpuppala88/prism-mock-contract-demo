@@ -1,0 +1,15 @@
+{
+  "name": "mock-framework",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node prism.cjs",
+    "stop": "node prism.cjs stop",
+    "lint": "npx spectral lint ../api/accounts.yaml ../api/petstore.yaml"
+  },
+  "devDependencies": {
+    "@stoplight/prism-cli": "^5.9.0",
+    "@stoplight/spectral-cli": "^6.11.0",
+    "tree-kill": "^1.2.2"
+  }
+}

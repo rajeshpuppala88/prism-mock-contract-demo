@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: tests.PetstoreIT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 10.71 s <<< FAILURE! -- in tests.PetstoreIT
+tests.PetstoreIT -- Time elapsed: 10.71 s <<< ERROR!
+org.awaitility.core.ConditionTimeoutException: Condition with tests.PetstoreIT was not fulfilled within 10 seconds.
+	at org.awaitility.core.ConditionAwaiter.await(ConditionAwaiter.java:167)
+	at org.awaitility.core.CallableCondition.await(CallableCondition.java:78)
+	at org.awaitility.core.CallableCondition.await(CallableCondition.java:26)
+	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:985)
+	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:954)
+	at tests.PetstoreIT.waitFor(PetstoreIT.java:32)
+	at tests.PetstoreIT.setup(PetstoreIT.java:26)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
